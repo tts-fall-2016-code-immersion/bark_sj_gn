@@ -18,6 +18,13 @@ class TweetsController < ApplicationController
     end
   end
 
+  def destroy
+      @tweet.destroy
+
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: 'Tweet was deleted'}
+      end
+    end
   def edit
   end
 
