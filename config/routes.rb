@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
 
-  resources :tweets
-
-  root 'tweets#index'
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get "profiles/:id" => "profiles#show", as: :profile
+
+  get "profiles" => "profiles#index"
+
+  resources :tweets do
+    resource :like
+  end
+
+  resources :relationships
+
+  root "tweets#index"
 end
