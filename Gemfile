@@ -6,6 +6,7 @@ gem "paperclip", "~> 5.0.0"
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
+  gem 'sqlite3'
 end
 group :production do
   gem 'pg'
