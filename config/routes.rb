@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
 
-  get "profiles" => "profiles#index"
-  get 'profiles/:id' => 'profiles#show', as: :profile
+  root 'pages#index'
+
+  get '/home' => 'pages#home'
+
+  get '/profile' => 'pages#profile'
+
+  get '/explore' => 'pages#explore'
+
+  #get "profiles" => "profiles#index"
+  #get 'profiles/:id' => 'profiles#show', as: :profile
 
   resources :tweets do
       resource :like
@@ -9,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :relationships
 
-  root 'tweets#index'
+  #root 'tweets#index'
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
