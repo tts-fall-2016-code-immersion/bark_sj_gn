@@ -5,28 +5,26 @@
           <p> Stats </p>
         </div>
       </div>
-    </div>
-    <div class="col-xs-6">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <p> Feed </p>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p> Trending Barks</p>
+            </div>
           </div>
         </div>
+      <div class="col-xs-6">
+        <% for @t in @tweets %>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <p><%= @t.message %></p>
+            </div>
+          </div>
+          <% end %>
     </div>
     <div class="col-xs-3">
       <div class="panel panel-default">
         <div class="panel-body">
           <p> About </p>
         </div>
-    </div>
-</div>
-<!-- begin row 2. -->
-<div class = "row">
-    <div class="col-xs-3">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <p> Trending Barks</p>
       </div>
     </div>
-  </div>
 </div>
