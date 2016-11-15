@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   #get 'profiles/:id' => 'profiles#show', as: :profile
 
   resources :tweets do
-      resource :like
+      #resource :like
   end
 
   resources :relationships

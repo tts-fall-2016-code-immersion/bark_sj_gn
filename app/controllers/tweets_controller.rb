@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
 
   before_action :set_tweet, only: [:edit, :update, :show, :destroy]
 
-  def index
+  def home
     @tweets = Tweet.all
   end
 
@@ -12,12 +12,12 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = Tweet.new(tweet_params)
-
+    @tweet.user_id = current_user.id
     respond_to do |format|
-      if @tweet.save
-        format.html { redirect_to tweet_path(@tweet.id), notice: 'success!'}
+      if (@tweet.save)
+        format.html { redirect_to "", notice: 'Bark created' }
       else
-        format.html { render :new, error: @tweet.errors[:messavge] }
+        format.html { redirect_to "", notice: "Error: Bark Not Saved."}
       end
     end
   end
@@ -43,7 +43,7 @@ class TweetsController < ApplicationController
     @tweet.destroy
 
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Tweet was deleted'}
+      format.html { redirect_to root_path, notice: 'Bark was deleted'}
     end
   end
 

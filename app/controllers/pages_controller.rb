@@ -14,6 +14,7 @@ class PagesController < ApplicationController
   end
 
   @tweets = Tweet.all.where("user_id = ?" , User.find_by_username(params[:id]).id)
+  @newTweet = Tweet.new 
 end
 
   def explore
