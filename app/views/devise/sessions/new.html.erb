@@ -1,5 +1,5 @@
-<h2>Log in</h2>
-
+<h2>Log into Bark</h2>
+<div class="log-in panel">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -16,11 +16,86 @@
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
+
   <% end -%>
 
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
-<% end %>
+  <br>
+  <%= render "devise/shared/links" %>
+  </div>
+  <style>
+      body {
+          background: url("/micflip.jpg") no-repeat center center fixed;
+          -webkit-background-size: cover;
+          -moz-backgriund-size: cover;
+          -o- background-size: cover;
+          background-size: cover;
 
-<%= render "devise/shared/links" %>
+        }
+        h1 {
+          color: white;
+          font-weight: bold;
+        }
+        .container-index {
+          margin-right: 10%;
+          margin-left: 6%;
+        }
+        .text {
+          color: white;
+          font-weight: bold;
+          font-size: 100%;
+        }
+        h3{
+          color: white;
+          font-weight: bold;
+        }
+        h2 {
+          color: white;
+          font-weight: bold;
+        }
+        .footer-links {
+          text-align: center;
+          color: white;
+          margin-top: 15%;
+          font-size: 75%;
+        }
+        .field {
+          margin-left: 5PX;
+        }
+        .log-in {
+          float: left;
+          width: 165px;
+          height: 160px;
+          margin-top: 1%;
+        }
+
+  </style>
+
+  </div>
+
+  <div class="container-index row">
+    <div class="col-sm-6">
+      <br>
+
+      <h1>Welcome!</h1>
+      <h3>When you feel there is nothing else you can do, Bark!</h3>
+      <p class="text">
+          Share your thoughts.<br>
+          Tell me how you really feel!
+        </p>
+    </div>
+
+
+  <div class="col-sm-12">
+    <p class="footer-links">About  Help  Blog  Status  Jobs  Terms  Privacy  Cookies  Ads  info  Brand  Advertise  Businesses  Media  Devlopers  Directory  @2016  Bark
+    </p>
+    </div>
+
+  </div>
+
+  <!-- <script>document.location = "/home"</script> -->
+
+
+<% end %>

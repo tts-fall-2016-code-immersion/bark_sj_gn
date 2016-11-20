@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'pages#index'
 
+  # get 'index' => 'pages#index'
+
   get '/home' => 'pages#home'
 
   get '/user/:id' => 'pages#profile'
@@ -15,7 +17,7 @@ Rails.application.routes.draw do
       #resource :like
   end
 
-  resources :relationships
+  # resources :relationships
 
   #root 'tweets#index'
 

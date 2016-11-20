@@ -1,9 +1,11 @@
 class PagesController < ApplicationController
   def index
+    render('index')
   end
 
   def home
     @tweets = Tweet.all
+    @newTweet = Tweet.new
   end
 
   def profile
@@ -14,7 +16,7 @@ class PagesController < ApplicationController
   end
 
   @tweets = Tweet.all.where("user_id = ?" , User.find_by_username(params[:id]).id)
-  @newTweet = Tweet.new 
+  @newTweet = Tweet.new
 end
 
   def explore
