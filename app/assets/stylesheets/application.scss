@@ -19,6 +19,9 @@
  body {
    background-color: rgba(179,204,226, 0.25);
  }
+ .rounded-img {
+   border-radius: 5%;
+ }
 
  .navbar {
    background-color: white
@@ -26,4 +29,32 @@
  .navbar-brand {
    position: absolute;
    left: 50%;
+   margin-right: 25px !important;
+   display: block;
  }
+ .tweet-panel {
+margin-top: -21px;
+ }
+ .tweet-title {
+   text-align: left;
+   margin-left: 15px;
+ }
+ .tweet-message {
+   text-align: left;
+   margin-left: 15px;
+ }
+.tweet-links {
+  text-align: left;
+}
+.tweet-owner {
+  color: black;
+  font-weight: bold;
+  }
+  .tweet-creation {
+    opacity: 0.25;
+  }
+  .g-links {
+    opacity: 0.4;
+    font-size: 120%;
+    margin-right: 75px;
+  }
