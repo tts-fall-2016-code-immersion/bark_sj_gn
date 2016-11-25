@@ -21,5 +21,7 @@ end
 
   def explore
     @tweets = Tweet.all
+    @newTweet = Tweet.new
+    # @toFollow - User.all.last(5)
   end
 end
