@@ -1,5 +1,6 @@
 class Relationship < ApplicationRecord
-  belongs_to :user #This is the user that initiates the action
-  belongs_to :friend, class_name: "User" #This is the user being followed
-
+  belongs_to :follower, class_name: "User"
+  belongs_to :followed, class_name: "User"
+  validates :follower_id, presence: true
+  validates :followed_id, presence: true
 end

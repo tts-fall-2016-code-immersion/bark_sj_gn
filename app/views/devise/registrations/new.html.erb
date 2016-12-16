@@ -1,5 +1,5 @@
 <h2>Sign up</h2>
-
+<div class="sign_up panel">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
@@ -19,10 +19,6 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.text_field :name, autofocus: true, placeholder: "First and Last Name" %>
   </div><br />
 
   <div class="field">
@@ -30,13 +26,9 @@
   </div><br />
 
   <div class="field">
-    <%= f.text_field :location, placeholder: "Charlotte, North Carolina" %>
+    <%= f.text_field :bio, placeholder: "Your Bio here." %>
   </div><br />
 
-
-  <div class="field">
-    <%= f.text_field :bio, placeholder: "Your Bio here." %>
-  </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
@@ -51,15 +43,36 @@
             background-size: cover;
 
           }
-          h1, h2{
+          .sign_up {
+            float: left;
+            width: 175px;
+            height: 280px;
+            margin-top: 1%;
+            margin-left: 17px;
+          }
+          .field {
+            margin-left: 7PX;
+
+          }
+          h1, h2, h3{
             color: white;
+            margin-left: 5px;
+          }
+          .text {
+            color: white;
+            font-weight: bold;
+            font-size: 100%;
           }
     </style>
 
 
   <div class="container">
-    <h1>Welcome to Bark.</h1>
-
+    <h1>Welcome!</h1>
+    <h3>When you feel there is nothing else you can do, Bark!</h3>
+    <p class="text">
+        We provide the stage. You provide the way!<br>
+        Tell me how you really feel!
+      </p>
 
   </div>
 

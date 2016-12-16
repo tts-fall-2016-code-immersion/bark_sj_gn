@@ -3,18 +3,29 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+         has_many :posts, dependent: :destroy # remove a user's posts if his account is deleted.
+         has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+         has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
 
-  has_many :tweets
-  has_many :relationships
-  has_many :friends, through: :relationships
+         has_many :following, through: :active_relationships, source: :followed
+         has_many :followers, through: :passive_relationships, source: :follower
 
-  has_many :inverse_relationships, class_name: 'Relationship', foreign_key: 'friend_id'
-  has_many :inverse_friends, through: :inverse_relationships, source: :user
-  has_many :likes
 
-  validates :username, presence: true, uniqueness: true
+         # helper methods
 
-  def likes?(tweet)
-    tweet.likes.where(user_id: self.id).any?
-  end
+         # follow another user
+         def follow(other)
+           active_relationships.create(followed_id: other.id)
+         end
+
+         # unfollow a user
+         def unfollow(other)
+           active_relationships.find_by(followed_id: other.id).destroy
+         end
+
+         # is following a user?
+         def following?(other)
+           following.include?(other)
+         end
+
 end

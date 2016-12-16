@@ -1,6 +1,7 @@
 class Tweet < ApplicationRecord
-  belongs_to :user
   has_many :likes
-  validates :message, presence: true, length: { maximum: 150, too_long: "A bark is only 150 characters! Everyone knows this mannn...!"}
-  default_scope -> { order(created_at: :desc) }
+  belongs_to :user
+  validates :user_id, presence: true
+  validates :content, presence: true, length: { maximum: 140 } # tweets are capped at 140 chars.
+  default_scope -> { order(created_at: :desc) } # newest tweets / posts first
 end

@@ -1,27 +1,39 @@
 class PagesController < ApplicationController
   def index
-    render('index')
   end
 
+  # back-end code for pages/home
   def home
-    @tweets = Tweet.all
-    @newTweet = Tweet.new
+    following = Array.new
+    for @f in current_user.following do
+      following.push(@f.id)
+    end
+
+    @posts = Post.where("user_id IN (?)", following)
+    @newPost = Post.new
   end
 
+  # back-end code for pages/profile
   def profile
+    # grab the username from the URL as :id
     if (User.find_by_username(params[:id]))
       @username = params[:id]
     else
+      # redirect to 404 (root for now)
       redirect_to root_path, :notice=> "User not found!"
+    end
+
+    @posts = Post.all.where("user_id = ?", User.find_by_username(params[:id]).id)
+    @newPost = Post.new
+
+    @toFollow = User.all.last(5)
   end
 
-  @tweets = Tweet.all.where("user_id = ?" , User.find_by_username(params[:id]).id)
-  @newTweet = Tweet.new
-end
-
+  # back-end code for pages/explore
   def explore
-    @tweets = Tweet.all
-    @newTweet = Tweet.new
-    # @toFollow - User.all.last(5)
+    @posts = Post.all
+    @newPost = Post.new
+        @toFollow = User.all.last(5)
   end
+
 end
