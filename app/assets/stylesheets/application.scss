@@ -13,17 +13,17 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
-
+  body { padding-top: 70px; }
  body {
      background-color: rgba(212, 216, 212, 0.25);
-     padding-top: 70px;
+    //  padding-top: 70px;
  }
 
  .rounded-img {
      border-radius: 5%;
  }
  .navbar {
-     background-color: white;
+   opacity: 75%;
  }
  .navbar-brand {
      position: absolute;
@@ -46,7 +46,7 @@
      margin-left: 15px;
  }
  .post-links {
-     text-align: left;
+     text-align: center;
  }
  .post-owner {
      color: black;
@@ -89,4 +89,7 @@
      width: 100%;
      height: 500px;
      margin-top: -21px;
+ }
+ .clock {
+margin-left: 35px;
  }

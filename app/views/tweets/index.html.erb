@@ -1,11 +1,10 @@
 <% if !user_signed_in? # if the user is not signed in, render this %>
     <style>
-        body { padding-bottom: 70px; }
         body {
             background: linear-gradient( /* somewhat transparent film on top of the BG to make it look darker. */
                 rgba(0,0,0, 0.7),
                 rgba(0,0,0, 0.7)
-                ), url("/micflip.jpg") no-repeat center center fixed
+                ), url("/bg.jpg") no-repeat center center fixed
 
             ; /* only display once, center horizontal and vertical, dont let scroll change position. */
             -webkit-background-size: cover;
