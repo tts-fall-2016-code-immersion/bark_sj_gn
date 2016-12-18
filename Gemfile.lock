@@ -69,10 +69,6 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.7.0)
-    feedtools (0.2.26)
-      activerecord (>= 1.10.1)
-      builder (>= 1.2.4)
-      uuidtools (>= 1.0.0)
     ffi (1.9.14)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -200,7 +196,6 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.3)
       execjs (>= 0.3.0, < 3)
-    uuidtools (2.1.5)
     warden (1.2.6)
       rack (>= 1.0)
     web-console (3.3.1)
@@ -220,7 +215,6 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise
-  feedtools (~> 0.2.26)
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
